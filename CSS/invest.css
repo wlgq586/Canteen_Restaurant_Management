@@ -1,0 +1,40 @@
+body{
+    background-image:linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0)),url(../image/index_img/invest.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: auto;
+    height: auto;
+    /* position: absolute; */
+    /* opacity: 0.5; */
+    left: 0;
+    top: 0;
+   }
+.login{
+    margin-top: 13%;
+    width: 300px;
+    height: 200px;
+    background: rgba(226, 226, 78, 0.257);
+    display: none;
+}
+#sus{
+    display: none;
+}
+#sus1{
+    display: none;
+}
+#fail{
+    display: none;
+}
+.in1{
+    margin-top: 50px;
+}
+.in2{
+    margin-top: 20px;
+}
+#btn{
+    margin-top: 10px;
+}
+#spent{
+    margin-top: 5%;
+    display: none;
+}

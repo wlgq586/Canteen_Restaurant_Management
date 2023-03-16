@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录界面</title>
+    <link rel="stylesheet" type="text/css" href="CSS/reg.css"> 
+    <script type="text/javascript" src="JS/reg.js"></script>
+    <!-- <script type="text/javascript" src="JS/index.js"></script> -->
+</head>
+<body>
+<div id="box">
+<center>
+<div>
+    <div class="dl_or_zc">
+        <div class="jx">
+            <!-- <div id="jx_border"></div> -->
+            <p id="title">食堂点餐系统登录</p>
+            <br>
+            
+            <form name="form1" action="">
+            <!-- </br> -->
+                <!-- <div id="p_usename"><font size="3">用户名</font></div> -->
+                <table width="200" border="0">
+                    <tr> 
+                        <td>
+                            <input id="username" type="text" placeholder="用户名">
+                        </td> 
+                    </tr>
+                </table>
+                
+                <br>
+                <!-- <div id="p_pwd"><font size="3">密码</font></div> -->
+                <table width="200" border="0">
+                    <tr>
+                        <td>
+                            <input id="password" type="password" placeholder="密码">
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                    <div class="label">
+                    <!-- <td> -->
+                        <label>自动登录<input type="checkbox" name="zddl" value="自动登录"></label>
+                        <label>记住密码<input type="checkbox" name="jzmm" value="记住密码"></label>
+                        <label>忘记密码<input type="checkbox" name="wjmm" value="忘记密码"></label>
+                    <!-- </td> -->
+                    </div>
+                <br>
+                <table id="table_dl_zc" border="0">
+                    <tr>
+                        <td>
+                            <input type="button" class="login" onclick="login()" style="cursor: pointer;" value="登录"/>
+                            <input type="button" class="back" onclick="back()" style="cursor: pointer;" value="返回"/>
+                        </td>
+                    </tr>
+                </table>
+                
+                <br>
+                <br>
+                <a class="a1" href="#">登录有问题?</a>
+                <a class="a2" href="tencent://message/?uin=3290003833&Site=&Menu=yes">联系我们</a>
+            </form>
+      
+        </div> 
+    </div>
+</div>
+</center>
+</div>
+</body>
+</html>

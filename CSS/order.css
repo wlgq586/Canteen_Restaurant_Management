@@ -1,0 +1,280 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: "黑体";
+	
+}
+#box{
+    background: url(../image/order_img/orderbg.jpg) center center;
+    background-size: cover;
+    background-attachment:fixed; 
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#menu{
+    width: 700px;
+    height: 250px;
+    border: 3px solid red;
+    background-color: rgba(140, 255, 0, 0.3);
+    display: block;
+    /* margin-right: 80px; */
+}
+#nr{
+    border: 3px solid red;
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 100%;
+}
+ul,ol{
+    float: left;
+    list-style: none;
+    line-height: 40px;
+    display: block;
+    padding: 0 30px;
+    font-size: 17px;
+}
+
+ul{
+    margin-left: 150px;
+}
+table,
+td,
+th{
+    text-align: center;
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+thead{
+    text-align: center;
+
+    background-color: rgba(1, 175, 1, 0.533);
+}
+#sum{
+    font-weight: bolder;
+    color: red;
+}
+
+a{
+    text-align: center;
+    text-decoration: none;
+    color: rgb(137, 38, 38);
+    font-size: 17px;
+
+}
+
+a:hover{
+    color: red;
+}
+
+#img{
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+}
+
+span{
+    color:orangered;
+}
+
+/* .item{
+    float: left;
+} */
+.reg{
+    float: right;
+}
+#regname{
+    margin-left: 180px;
+    background-color: rgba(10, 179, 246, 0.533);
+    color: blue;
+    cursor: pointer;
+    display: block;
+}
+#regname:hover{
+    color: red;
+}
+
+.box1{
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: #000;
+    box-shadow: 0 0 20px royalblue;
+}
+
+.box1 .imgbx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+}
+
+.box1 .imgbx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 200px;
+    /* padding: 20px; */
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.box1:hover .imgbx img{
+    opacity: 0;
+}
+
+.box1 .content{
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    width: 80%;
+    height: 60px;
+    background: #fff;
+    transition: 0.5s;
+    overflow: hidden;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.box1:hover .content{
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+.box1 .content h3{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+.box1 .content p{
+    margin: 10px 0 0;
+    padding: 0;
+    opacity: 0;
+    line-height: 1.2em;
+    transition: 0.5s;
+    text-align: justify;
+}
+.box1:hover .content p{
+    opacity: 1;
+    transition-delay: 0.4s;
+}
+
+#success{
+    width: 250px;
+    height: 30px;
+    background-color: white;
+    opacity: 1;
+    transition: 2s;
+    display: none;
+}
+/* #success:hover{
+    opacity: 0;
+} */
+
+#fail{
+    width: 200px;
+    height: 30px;
+    background-color: white;
+    opacity: 1;
+    transition: 2s;
+    display: none;
+}
+#htm{
+    color: rgb(137, 38, 38);
+    cursor: pointer;
+    font-size: 17px;
+}
+
+#htm:hover{
+    color: red;
+}
+
+#meishi{
+    position: relative;
+    width: 1100px;
+    height: 300px;
+    background: rgba(119, 115, 110,0.9);
+    /* 让这个div显示在最上层 */
+    /* z-index: 999; */
+    margin-top: -100px;
+    display: none;
+}
+
+.container{
+    overflow: hidden;
+    position: absolute;
+}
+.container span{
+    font-size: 17px;
+     width: 50px;
+    /*height: 40px; */
+    /* line-height: 40px; */
+    border-radius: 15px;
+    display: block;
+    text-align: center;
+    background: rgba(104, 250, 201, 0.849);
+    /* background: gray; */
+    cursor: pointer;
+}
+.container span:hover{
+    color: red;
+}
+.container div{
+    /* position: absolute; */
+    width: 60px;
+    /*height: 40px; */
+    cursor: pointer;
+    border-radius: 10px;
+    line-height: 40px;
+    text-decoration: none;
+    background: rgba(104, 250, 201, 0.849);
+    display: none;
+    text-align: center;
+    z-index: 99999;
+}
+
+#banner{
+    height: 200px;
+    width: 800px;
+    padding: 0; 
+    position: absolute; 
+     /* 水平居中  */
+     left: 50%; 
+     margin-left: -400px; 
+    /* 垂直居中  */
+     /* top: 50%;  */
+     margin-top: 60px;
+     list-style: none;
+} 
+
+/* 移入到轮播图区域把鼠标形状变成‘手’ */
+#banner:hover {
+    cursor: pointer;
+}
+
+li {
+    position: absolute;
+    /* left: 200px; */
+    /* 过渡属性，让轮播图切换更自然 */
+    transition: 0.4s;
+}
+
+
+.delete{
+    width:22px;
+    height:22px;
+    border-radius:60%;
+    position:absolute;
+    top:-67px;
+    right:-155px;
+}
+
+.eja:hover{
+    color: red;
+}

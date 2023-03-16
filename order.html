@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!-- <html lang="en"> -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食堂点餐</title>
+    <link rel="stylesheet" type="text/css" href="CSS/order.css"> 
+    
+    <script type="text/javascript" src="JS/order.js"></script>
+    <script type="text/javascript" src="JS/reg.js"></script>
+</head>
+<body>
+    
+    <div id="box">
+        <center>
+        <!-- <OBJECT   ID="CardActive"  TYPE="application/x-itst-activex" clsid="{CBA5D514-3544-4E87-80D2-F1582FA87841}"></OBJECT> -->
+            
+            <div style="float: left; color: aqua;" >用户名：<span id="user">#</span><br>余额：<span id="money">0</span></div>
+            <div id="success">支付成功！请勿浪费哦！^-^</div>
+            <div id="fail">用户已取消支付</div> 
+            <ul>
+                <ol><div id="htm" onclick="urlhtml()">系统首页</div></ol>
+                <ol><a href="#">食堂环境</a></ol>
+                <ol><div id="htm" onclick="MS()">美食展示</div></ol>
+                <ol><a href="order.html">食堂点餐</a></ol>
+                <ol><a href="tencent://message/?uin=3290003833&Site=&Menu=yes">联系我们</a></ol>
+                <ol>
+                    <div class="container">
+                        <span class="ej" onclick="menu()">更多</span>
+                        <div class="eja" onclick="CZ()">充值</div>
+                        <div class="eja" onclick="BB()">报表</div>
+                        <div class="eja">管理员</div>
+                    </div>
+                </ol>
+                <ol id="regname"><a href="reg.html">登录</a></ol>
+                <!-- <input type="button" class="regname" value="登录"> -->
+            </ul>
+            
+            <marquee behavior=alternate style="margin-left: 20em; margin-right: 20em;"><h2 style="color:antiquewhite; ">@宇颀食堂</h2></marquee>
+            <br>
+            <h2 style="color: red;">你的菜单</h2>
+            <div id="menu">
+                
+                <form>
+                    <table class="item">
+                        <thead>
+                            <tr>
+                                <th>菜品或套餐</th>
+                                <th style="width: 60px;">价格/元</th>
+                                <th style="width: 60px;">取消</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        <span style="font-weight: bolder;
+                        color:orangered">总计：</span><span id="sum">0</span>
+                        <button type="button" class="ordersubmit">提交订单</button>
+                    </table>
+                    
+                </form>
+                
+                
+            </div>
+            
+            <div id="meishi">
+                <ul id="banner"><img src="./image/order_img/qx.jpg" onclick="qx()" class="delete"/></ul>
+        <script>
+        //1.获取ul
+        var cur_ul = document.getElementById('banner');
+        // 2.创建一个数组实例
+        var arry = new Array();
+        
+        // 用js来创建li、img元素，有多少张图片要轮播就循环多少次
+        for (i = 1; i <= 4; i++) {
+            // 创建li元素
+            var cur_li = document.createElement('li');
+            // 创建img元素
+            var cur_img = document.createElement('img')
+            // 给img元素设置src、width、height属性
+            cur_img.src = './image/order_img/lun' + i + '.jpg';
+            cur_img.style.width = '400px';
+            cur_img.style.height = '200px';
+            // 把img元素插入到创建的li里面
+            cur_li.appendChild(cur_img);
+            // 然后在把li插入到ul里面
+            cur_ul.appendChild(cur_li);
+            // 然后给ul元素设置事件，鼠标移进来停止轮播
+            cur_ul.onmouseenter = function () {
+                clearInterval(timer);
+            }
+            // 鼠标移出ul又继续轮播图片
+            cur_ul.onmouseleave = function () {
+                timer = setInterval(get_next, 3000)
+            }
+            // 当创建完一个li（li里已经有img元素）就把li添加到arr数组里
+            arry.push(cur_li);
+        }
+        
+        for (i = 5; i <= 9; i++) {//再加一些图片
+            var cur_li = document.createElement('li')
+            var cur_img = document.createElement('img')
+            cur_img.src = './image/order_img/' + i + '.jpeg';
+            cur_img.style.width = '400px';
+            cur_img.style.height = '200px';
+            cur_li.appendChild(cur_img);
+            cur_ul.appendChild(cur_li);
+            cur_ul.onmouseenter = function () {
+                clearInterval(timer);
+            }
+            cur_ul.onmouseleave = function () {
+                timer = setInterval(get_next, 3000)
+            }
+            arry.push(cur_li);
+        }
+        
+        // 因为所写的轮播图是中间图片放大，左右两边图片正常，所以要进行下面的操作
+        var len = arry.length - 1;
+        // 这是取得左边图片并调整位置
+        arry[len - 2].style.left = '0px';
+        // 这是取得中间图片并调整位置
+        arry[len - 1].style.left = '200px';
+        // 这是取得右边图片并调整位置
+        arry[len].style.left = '400px';
+        // 然后中间图片调用scale使其变大
+        arry[len - 1].style.transform = 'scale(1.3)';
+        // 中间图片也给其一个较大的堆叠数值，使其中间图片在左右图片上面
+        arry[len - 1].style.zIndex = 100;
+        
+        // 封装轮播图函数 
+        // 然后开始进行轮播，原理就是换arr里的li元素的位置，越靠后的li元素z-index越大
+        // z-index越大，就会叠在其他li元素上面，所以换arr里的li位置就可以实现轮播
+        function get_next() {
+            var give_up = arry[arry.length - 1];//获取arr数值里最后一个li元素
+            arry.pop();//删除掉最后一个li元素
+            arry.unshift(give_up);//最后把最后一个元素插入到arr数组的前面
+            // 然后重新给arr数组里的li元素设置z-index和scale
+            // var x=0;
+            // while(x<arr.length){
+            //     console.log("x:"+x);
+            //     arr[x].style.zIndex = x;
+            //     arr[x].style.transform = 'scale(1)';
+            //     x++;
+            // }
+            for (var i = 0; i < arry.length; i++) {
+                // console.log(i);
+                arry[i].style.zIndex = i;
+                arry[i].style.transform = 'scale(1)';
+            }
+            // 这步就是展示arr的后三张图片，和前一个步骤的一样
+            arry[len - 2].style.left = '0px';
+            arry[len - 1].style.left = '200px';
+            arry[len].style.left = '400px';
+            // arr[len - 1].style.transform = 'scale(1.3)'//最前面的图片扩大1.3倍
+            // arr[len - 1].style.zIndex = 100;
+        }
+        // 声明一个定时器，然后把轮播图函数放进间歇函数，2秒进行一次轮播
+        var timer = setInterval(get_next, 2000)
+        
+        </script>
+            </div>
+                
+            <h2>菜品展示</h2>
+            
+            <div style="height: calc(100vh)">
+                
+                <div id="nr" style="overflow: auto; height: 400px;">
+                    <div class="content" style="float: right; margin-right: 5px;">
+                        <div class="search" style="z-index: 9999;">
+                            <input type="text" id="val" placeholder="请输入菜品名称">
+                            <button style="background-color: antiquewhite;" type="button" onclick="subt()">Submit</button>
+                        </div>
+                        <div id="show" style="width: 145px; height: 180px;margin-right: 49px; display: none; background-color:rgba(202, 248, 248, 0.357);">
+                            
+                        </div>
+                    </div>
+                    <form>
+                        <table id="table">
+                            
+                        </table>
+                    </form>
+                </div>
+            </div>
+            
+        </center>
+    </div>
+    <script type="text/javascript" src="./JS/order.js"></script>
+    
+</body>
+</html>

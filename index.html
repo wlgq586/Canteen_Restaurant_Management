@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食堂点餐系统</title>
+    <link rel="stylesheet" type="text/css" href="CSS/index.css"> 
+    <script type="text/javascript" src="JS/reg.js"></script>
+    <script type="text/javascript" src="JS/index.js"></script>
+</head>
+<body>
+    <div id="box">
+        <center>
+            <ul>
+                <ol><a href="index.html">系统首页</a></ol>
+                <ol><div id="htm" onclick="ST()">食堂环境</div></ol>
+                <ol><div id="htm" onclick="MS()">美食展示</div></ol>
+                <ol><div id="htm" onclick="urlhtml()">食堂点餐</div></ol>
+                <ol><a href="tencent://message/?uin=3290003833&Site=&Menu=yes">联系我们</a></ol>
+                <ol>
+                    <div class="container">
+                        <span class="ej" onclick="menu()">更多</span>
+                        <div class="eja" onclick="CZ()">充值</div>
+                        <div class="eja" onclick="BB()">报表</div>
+                        <div class="eja">管理员</div>
+                    </div>
+                </ol>
+
+                <ol id="regname"><a href="reg.html">登录</a></ol>
+                <!-- <li class="regname">登录</li> -->
+            </ul>
+            <div style="float: left; color: aqua;" >用户名：<span id="user">#</span><br>余额：<span id="money">0</span></div>
+            <marquee behavior=alternate direction=right style="margin-left: 20em; margin-right: 20em;"><h2 style="color:antiquewhite; ">@宇颀食堂</h2></marquee>
+            <br>
+            <img src="./image/index_img/dian1.jpg" style="width: 540px; height: 230px;">
+            <br><br><br>
+            <div id="demo" style="overflow:hidden;height: 150px; display: none;width: 800px; margin-left: 4%; z-index: 10000;">
+                <table align="left" cellpadding="0" cellspace="0" border="0">
+                  <tr>
+                    <td id="demo1" valign="top" nowrap="nowrap">
+                      <img class="picture" src="./image/index_img/st1.jpg" />
+                      <img class="picture" src="./image/index_img/st2.jpg" />
+                      <img class="picture" src="./image/index_img/st3.jpg" />
+                      <img class="picture" src="./image/index_img/st4.jpg" />
+                      <img class="picture" src="./image/index_img/st5.jpg" />
+                      <img class="picture" src="./image/index_img/st6.jpg" />
+                      <img class="picture" src="./image/index_img/st7.png" />
+                    </td>
+                    <td id="demo2" valign="top" nowrap="nowrap"></td>
+                  </tr>
+                </table>
+              </div>
+              <script>
+                var speed = 50;
+                demo2.innerHTML = demo1.innerHTML;
+                function Marquee() {
+                  if (demo.scrollLeft <= 0) demo.scrollLeft += demo2.offsetWidth;
+                  else {
+                    demo.scrollLeft--;
+                  }
+                }
+                var MyMar = setInterval(Marquee, speed);
+                demo.onmouseover = function() {
+                  clearInterval(MyMar) ;  //鼠标悬停时，暂停滚动
+                }
+                demo.onmouseout = function() {
+                  MyMar = setInterval(Marquee, speed);   //鼠标移开时，开始滚动
+                }
+              </script>
+            <br><br><br><br>
+            
+            <p>
+                本食堂系统主要用于减缓食堂空间拥挤，学校就餐人员时间增多，流动不通等弊病。
+            </p>
+            <p>
+                并且为了使食堂的工作效率增加，学生所受的服务更加便捷和多元化，便设计此系统
+            </p>
+            <p>
+                作为食堂和被服务者全新的合作方式。
+            </p>
+            <p>
+                此外，我们还会接收来自广大服务者的反馈以便做出更质量的服务，谢谢支持！
+            </p>
+        </center>
+        
+        <div id="meishi">
+            <ul id="banner"><img src="./image/order_img/qx.jpg" onclick="qx()" class="delete"/></ul>
+            <script>
+            //1.获取ul
+            var cur_ul = document.getElementById('banner');
+            // 2.创建一个数组实例
+            var arr = new Array();
+            
+            // 用js来创建li、img元素，有多少张图片要轮播就循环多少次
+            for (i = 1; i <= 4; i++) {
+                // 创建li元素
+                var cur_li = document.createElement('li');
+                // 创建img元素
+                var cur_img = document.createElement('img')
+                // 给img元素设置src、width、height属性
+                cur_img.src = './image/order_img/lun' + i + '.jpg';
+                cur_img.style.width = '400px';
+                cur_img.style.height = '200px';
+                // 把img元素插入到创建的li里面
+                cur_li.appendChild(cur_img);
+                // 然后在把li插入到ul里面
+                cur_ul.appendChild(cur_li);
+                // 然后给ul元素设置事件，鼠标移进来停止轮播
+                cur_ul.onmouseenter = function () {
+                    clearInterval(timer);
+                }
+                // 鼠标移出ul又继续轮播图片
+                cur_ul.onmouseleave = function () {
+                    timer = setInterval(get_next, 3000);
+                }
+                // 当创建完一个li（li里已经有img元素）就把li添加到arr数组里
+                arr.push(cur_li);
+            }
+            
+            for (i = 5; i <= 9; i++) {//再加一些图片
+                var cur_li = document.createElement('li');
+                var cur_img = document.createElement('img');
+                cur_img.src = './image/order_img/' + i + '.jpeg';
+                cur_img.style.width = '400px';
+                cur_img.style.height = '200px';
+                cur_li.appendChild(cur_img);
+                cur_ul.appendChild(cur_li);
+                cur_ul.onmouseenter = function () {
+                    clearInterval(timer)
+                }
+                cur_ul.onmouseleave = function () {
+                    timer = setInterval(get_next, 3000)
+                }
+                arr.push(cur_li);
+            }
+            
+            // 因为所写的轮播图是中间图片放大大，左右两边图片正常，所以要进行下面的操作
+            var len = arr.length - 1;
+            // 这是取得左边图片并调整位置
+            arr[len - 2].style.left = '0px';
+            // 这是取得中间图片并调整位置
+            arr[len - 1].style.left = '200px';
+            // 这是取得右边图片并调整位置
+            arr[len].style.left = '400px';
+            // 然后中间图片调用scale使其变大
+            arr[len - 1].style.transform = 'scale(1.3)';
+            // 中间图片也给其一个较大的堆叠数值，使其中间图片在左右图片上面
+            arr[len - 1].style.zIndex = 100;
+            
+            // 封装轮播图函数 
+            // 然后开始进行轮播，原理就是换arr里的li元素的位置，越靠后的li元素z-index越大
+            // z-index越大，就会叠在其他li元素上面，所以换arr里的li位置就可以实现轮播
+            function get_next() {
+                var give_up = arr[arr.length - 1];//获取arr数值里最后一个li元素
+                arr.pop();//删除掉最后一个li元素
+                arr.unshift(give_up);//最后把最后一个元素插入到arr数组的前面
+                // 然后重新给arr数组里的li元素设置z-index和scale
+                for (var i = 0; i < arr.length; i++) {
+                    // console.log(i);
+                    arr[i].style.zIndex = i;
+                    arr[i].style.transform = 'scale(1)'
+                }
+                // 这步就是展示arr的后三张图片，和前一个步骤的一样
+                arr[len - 2].style.left = '0px';
+                arr[len - 1].style.left = '200px';
+                arr[len].style.left = '400px';
+                arr[len - 1].style.transform = 'scale(1.3)'//最前面的图片扩大1.3倍
+                arr[len - 1].style.zIndex = 100;
+            }
+            // 声明一个定时器，然后把轮播图函数放进间歇函数，2秒进行一次轮播
+            var timer = setInterval(get_next, 2000)
+            
+            </script>
+        </div>
+        <br>
+        <marquee direction=right style="color: red; margin-left: 3em; font-size: 17px;font-weight: bolder;">杜绝浪费，从我做起！</marquee>
+        <marquee direction=left style="color: red; margin-right: 3em; font-size: 17px;font-weight: bolder;">杜绝浪费，从我做起！</marquee>
+    </div>
+
+</body>
+</html>

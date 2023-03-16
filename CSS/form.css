@@ -1,0 +1,25 @@
+body{
+    background-image:linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0)),url(../image/index_img/forms.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: auto;
+    height: auto;
+    /* position: absolute; */
+    /* opacity: 0.5; */
+    left: 0;
+    top: 0;
+}
+
+table,
+td{
+    width: 540px;
+    text-align: center;
+    border: 2px solid #000;
+    border-collapse: collapse;
+    color: blue;
+    /* padding-left: 12px; */
+}
+
+span{
+    color: red;
+}

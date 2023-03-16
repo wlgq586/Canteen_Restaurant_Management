@@ -1,0 +1,132 @@
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        /* background: url(../image/index_img/dining_bg.webp) no-repeat center -400px; */
+        background: url(../image/index_img/reg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: auto;
+        height: auto;
+        position: absolute;
+        left: 0;
+        top: 0;
+       }
+    .jx{
+        width: 480px;
+        height: 350px;
+        background-color: #fff;
+        position: absolute;
+        top: 100px;
+        left: 380px;
+        box-shadow:0px 0px 10px 5px #eff2c5;
+        background: rgba(250, 250, 250, 0.8);
+        border-radius: 5%;
+        overflow: hidden;
+        z-index: 0;
+    }
+
+    .jx::before{
+        content: "";
+        width:200%;
+        height: 200%;
+        background-image: conic-gradient(transparent,#66ddf7,transparent 30%);
+        position: absolute;
+        left: -50%;
+        top: -50%;
+        z-index: -2;
+        animation: rotate 5s linear infinite;
+    }
+
+    @keyframes rotate {
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    .jx::after{
+        content: "";
+        inset:1vmin;
+        background-color: rgb(171, 195, 17);
+        background: rgba(250, 250, 250, 0.37);
+
+        position:absolute;
+        z-index: -1;
+    }
+
+    #jx_border{
+        width: 480px;
+        height: 350px;
+        background-color: #fff;
+        position: absolute;
+        top: 100px;
+        left: 380px;
+        transition: ease-in .3s;
+        background: linear-gradient(0, #108b96 2px, #108b96 2px) no-repeat,
+        linear-gradient(-90deg, #108b96 2px, #108b96 2px) no-repeat,
+        linear-gradient(-180deg, #108b96 2px, #108b96 2px) no-repeat,
+        linear-gradient(-270deg, #108b96 2px, #108b96 2px) no-repeat;
+        background-size: 0 2px, 2px 0, 0 2px, 2px 0;
+        background-position: left top, right top, right bottom, left bottom;;
+    }
+    #jx_border:hover {
+    background-size: 100% 2px, 2px 100%, 100% 2px, 2px 100%;
+    } 
+     #title{
+        font-size: x-large;
+        font-weight: 550;
+         margin-top: 10px;
+        text-align-last: center;
+        position: relative;
+        color: rgb(246, 176, 188);
+    }
+    #p_usename{
+        margin-left: 139px;
+        margin-top: 35px;
+    }
+    #p_pwd{
+        margin-left: 139px;
+        margin-top: 0px;
+    }
+    #username{
+        margin-left: 14px;
+        height: 25px;
+        border-radius: 10px/10px;
+        box-shadow:0px 0px 10px 5px #acdbf3;
+        background-color: rgb(211, 209, 209);
+        background: rgba(211, 209, 209, 0.3);
+    }
+    #password{
+        margin-left: 14px;
+        height: 25px;
+        border-radius: 10px/10px;
+        box-shadow:0px 0px 10px 5px #acdbf3;
+        background-color: rgb(211, 209, 209);
+        background: rgba(211, 209, 209, 0.3);
+    }
+    .login{
+        width: 45px;
+        height: 25px;
+        border-radius: 7.5px/10px;
+    }
+    .back{
+        width: 45px;
+        height: 25px;
+        border-radius: 7.5px/10px;
+    }
+    .login:hover{
+        background-color: #a6bb2e;
+    }
+    .back:hover{
+        background-color: lightpink;
+    }
+    .a2{
+        margin-left: 246px;
+    }
+    a:hover{
+        color: orangered;
+    }
+   #select_id select:hover{
+    box-shadow:0px 0px 10px 5px #acdbf3;
+   }
+   

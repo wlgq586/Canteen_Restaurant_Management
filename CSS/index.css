@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: "黑体";
+	
+}
+/* #box{
+    background: url(../image/index_img/dining_bg.jpeg) ;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+} */
+body{
+    /* background: url(../image/index_img/dining_bg.webp) no-repeat center -400px; */
+    background: url(../image/index_img/dining_bg.jpg) 0px -230px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+   }
+ul,ol{
+    float: left;
+    list-style: none;
+    line-height: 40px;
+    display: block;
+    padding: 0 30px;
+    font-size: 17px;
+}
+
+ul{
+    margin-left: 150px;
+}
+
+a{
+    text-align: center;
+    text-decoration: none;
+    color: rgb(137, 38, 38);
+    font-size: 17px;
+
+}
+
+a:hover{
+    color: red;
+}
+
+p{
+    color:blue;
+    font-size: 18px;
+}
+
+table{
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid #333333;
+    /*合并表格边框属性*/
+    border-collapse: collapse;
+}
+td,th{
+    height: 40px;
+    border: 1px solid #333333;
+}
+
+#regname{
+    margin-left: 170px;
+    background-color: rgba(10, 179, 246, 0.533);
+    color: blue;
+    cursor: pointer;
+    display: block;
+}
+#regname:hover{
+    color: red;
+}
+
+#htm{
+    color: rgb(137, 38, 38);
+    cursor: pointer;
+    font-size: 17px;
+}
+
+#htm:hover{
+    color: red;
+}
+
+#meishi{
+    position: relative;
+    width: 1100px;
+    height: 300px;
+    background: rgba(119, 115, 110,0.9);
+    /* 让这个div显示在最上层 */
+    z-index: 999;
+    margin-top: -200px;
+    margin-left: 80px;
+    display: none;
+}
+.container{
+    overflow: hidden;
+    position: absolute;
+}
+.container span{
+    font-size: 17px;
+     width: 50px;
+    /*height: 40px; */
+    /* line-height: 40px; */
+    border-radius: 15px;
+    display: block;
+    text-align: center;
+    background: rgba(104, 250, 201, 0.849);
+    /* background: gray; */
+    cursor: pointer;
+}
+.container span:hover{
+    color: red;
+}
+.container div{
+    /* position: absolute; */
+    width: 60px;
+    /*height: 40px; */
+    cursor: pointer;
+    border-radius: 10px;
+    line-height: 40px;
+    text-decoration: none;
+    background: rgba(104, 250, 201, 0.849);
+    display: none;
+    text-align: center;
+    z-index: 99999;
+}
+
+#banner{
+    height: 200px;
+    width: 800px;
+    padding: 0; 
+    position: absolute; 
+     /* 水平居中  */
+     left: 50%; 
+     margin-left: -400px; 
+    /* 垂直居中  */
+     /* top: 50%;  */
+     margin-top: 60px;
+     list-style: none;
+} 
+
+/* 移入到轮播图区域把鼠标形状变成‘手’ */
+#banner:hover {
+    cursor: pointer;
+}
+
+li {
+    position: absolute;
+    /* left: 200px; */
+    /* 过渡属性，让轮播图切换更自然 */
+    transition: 0.4s;
+}
+
+.picture {
+    width: 230px;
+    height: 150px;
+  }
+
+.delete{
+    width:22px;
+    height:22px;
+    border-radius:60%;
+    position:absolute;
+    top:-67px;
+    right:-155px;
+}
+.eja:hover{
+    color: red;
+}
